@@ -1,13 +1,16 @@
-<div class="flex flex-col justify-center items-center min-h-screen">
-<h2 class="text-xl text-center mb-10">
-    知らんけど。。。。
-</h2>
-<div class="twitter mt-4">
-   <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【今日の運勢を占ったよ！~fortune pocket~】%0a%0a#{@omikuji}", class: "btn btn-md btn-wide btn-secondary bg-pink-200", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
-    <i class="fab fa-twitter">Xでシェアする</i>
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-  </svg>
-   <% end %>
-</div>
+<!-- app/views/static_pages/top.html.erb -->
+<div class="flex flex-col justify-center items-center min-h-screen bg-orange-100">
+  <h2 class="text-4xl text-center mb-6 font-bold text-green-600">
+    笑いの世界へようこそ！おもろいかは知らんけど...
+  </h2>
+  <p class="text-lg text-center mb-10 text-gray-800">
+    関西のおばちゃんがあなたにジョークを届けます。
+    <br>
+    テーマを選んで、おもしろいジョークを聞いてみましょう！
+  </p>
+  <div class="mt-4">
+    <%= link_to new_joke_path, class: "btn btn-lg btn-primary bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded" do %>
+      ジョークを聞く
+    <% end %>
+  </div>
 </div>
