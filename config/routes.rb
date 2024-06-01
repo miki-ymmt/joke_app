@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'jokes/index'
   get 'jokes/show'
   get 'jokes/new'

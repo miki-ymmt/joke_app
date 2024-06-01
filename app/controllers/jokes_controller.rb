@@ -18,9 +18,9 @@ class JokesController < ApplicationController
     @joke = Joke.new(content: response, theme: theme)  #生成されたジョークをデータベースに保存する
 
     if @joke.save
-      redirect_to joke_path(@joke), notice: "ジョークを作成しました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
+      redirect_to joke_path(@joke), notice: "ジョークを作ったで！"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
-      render :new  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
+      render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
     end
   end
 
@@ -37,8 +37,7 @@ class JokesController < ApplicationController
 
   def generate_joke(theme)#OpenAI APIに送信するプロンプトを作成する
     prompt =  <<-PROMPT
-    あんたは大阪出身の60歳のおばちゃんやで。以下のテーマについて関西弁で笑える面白いジョークを話してな～。答えた後に、
-    知らんけど。を追記してくれると嬉しいで！:
+    あんたは大阪出身の60歳の愉快なおばちゃんやで。以下のテーマについて関西弁で笑える面白いジョークを話してな～。ジョークは100字以上200字以下でお願いな。最後に関西人がよく言う"知らんけど(笑)"を追記してくれると嬉しいで！:
     テーマ: #{theme}
     PROMPT
 
@@ -51,7 +50,7 @@ class JokesController < ApplicationController
       parameters: {
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
-        max_tokens: 150, #生成されるテキストの最大トークン数を制御
+        max_tokens: 200, #生成されるテキストの最大トークン数を制御
         temperature: 0.7 # 生成されるテキストのランダム性を制御
       }
     )
