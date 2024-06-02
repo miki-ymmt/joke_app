@@ -1,7 +1,0 @@
-<h1>ジョーク一覧</h1>
-<%= link_to '新しいジョークを投稿', new_joke_path %>
-<ul>
-  <% @jokes.each do |joke| %>
-    <li><%= joke.content %></li>
-  <% end %>
-</ul>

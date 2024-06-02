@@ -9,7 +9,7 @@ class JokesController < ApplicationController
   end
 
   def new  #新しいジョークを作成する
-    @themes = ["仕事", "学校", "家族", "友達", "食べ物", "趣味", "恋愛"]
+    @themes = ["仕事", "学校", "家族", "友達", "食べ物", "お金", "趣味", "恋愛"]
   end
 
   def create  #選択されたテーマに沿ったジョークを生成する
