@@ -22,6 +22,7 @@ class JokesController < ApplicationController
       redirect_to joke_path(@joke), notice: "ジョークを作ったで！"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
       #Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
+      flash[:alert] = "もう一回テーマを選んでな！"
       render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
     end
   end
