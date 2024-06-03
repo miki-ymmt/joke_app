@@ -1,16 +1,33 @@
 <!-- app/views/static_pages/top.html.erb -->
-<div class="flex flex-col justify-center items-center min-h-screen bg-pink-100">
+<div class="flex flex-col justify-center items-center min-h-screen bg-white">
   <h2 class="text-4xl text-center mb-6 font-bold text-yellow-800">
     笑いの世界へようこそ！おもろいかは知らんけど...
   </h2>
   <p class="text-lg text-center mb-10 text-gray-800">
-    関西のおばちゃんがあなたにジョークを届けます。
+    使い方は簡単！
     <br>
-    テーマを選んで、おもしろいジョークを聞いてみましょう！
+    <br>
+    <strong>1.聞きたい小話のテーマを選ぶ</strong>
+    <br>
+    大阪出身の元気なおばちゃんが、選んだテーマに合うとっておきの小話を披露してくれます。
+    <br>
+    <br>
+    <strong>2.タイトルを決めて投稿</strong>
+    <br>
+    おばちゃんの小話を聞いてピッタリなタイトルをつけてみて。
+    <br>
+    <br>
+    <strong>3.いいね、シェアで広める</strong>
+    <br>
+    おもしろかったら、いいねやXでシェアして友達にも教えてあげて。
+    <br>
+    <br>
+    <br>
+    さあ、早速テーマを選んでおもしろい小話を聞いてみて。
   </p>
   <div class="mt-4">
     <%= link_to jokes_new_path, class: "btn btn-lg btn-primary bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded" do %>
-      ジョークを聞く
+      おばちゃんの小話を聞く
     <% end %>
   </div>
 </div>

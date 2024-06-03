@@ -2,7 +2,7 @@ class JokesController < ApplicationController
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jokes = Joke.page(params[:page]).order(created_at: :desc).per(9) #ページネーションを設定する
+    @jokes = Joke.page(params[:page]).order(created_at: :desc).per(8) #ページネーションを設定する
   end
 
   def show #選択されたジョークを表示する

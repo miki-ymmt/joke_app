@@ -1,7 +1,8 @@
-<div class="card w-96 bg-primary text-primary-content">
+<div class="card w-96 bg-blue-200 text-base-content p4 rounded-lg drop-shadow-md">
   <div class="card-body">
     <p class="card-text"><strong>テーマ:</strong> <%= joke.theme %></p>
     <p class="card-text"><strong>タイトル:</strong> <%= joke.title %></p>
     <p class="card-text"><%= joke.content %></p>
+    <%= link_to '詳しく見る', joke_path(joke), class: 'btn btn-active btn-link' %>
   </div>
 </div>

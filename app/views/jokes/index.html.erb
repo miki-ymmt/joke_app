@@ -1,13 +1,15 @@
 <div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold mb-4">ジョークの一覧やで！</h1>
+  <h1 class="text-3xl font-bold mb-10 flex justify-center">小話の一覧やで！</h1>
   <% if @jokes.present? %>
-    <div class="grid grid-cols-1 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       <%= render @jokes %>
     </div>
-    <dev class="mt-4">
+    <div class="mt-4 flex justify-center mt-10">
       <%= render 'kaminari/paginator', jokes: @jokes %>
-    </dev>
+    </div>
   <% else %>
-    <p>ジョークがまだ投稿されてないで！</p>
+    <p>小話がまだ投稿されてないで！</p>
   <% end %>
+</div>
+  <%= link_to '新しい小話を聞く', new_joke_path, class: 'btn btn-outline btn-neutral text-gray-500 hover:text-gray-100 mt-4 mb-10 ml-5' %>
 </div>

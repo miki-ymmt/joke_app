@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-bold mb-4">ジョークを生成する</h1>
   <%= form_with url: jokes_path, method: :post, local: true do |form| %>
     <label for="theme" class="block text-lg font-medium text-gray-700">テーマを選ぶ</label>
-    <%= form.select :theme, options_for_select(['仕事', '学校', '家族', '友達', '食べ物', '趣味', 'お金', '恋愛']), { prompt: 'テーマを選んでや～' }, class: "mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" %>
+    <%= form.select :theme, options_for_select(['仕事', '学校', '家族', '友達', '食べ物', '趣味', 'お金', '恋愛']), { prompt: 'テーマを選んでや～' }, class: "mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-yellow-200/50 border-2 border-yellow-400" %>
     <%= form.submit "おばちゃんにまかしとき！", class: "bg-blue-500 text-white px-4 py-2 rounded mt-4" %>
   <% end %>
 </div>
