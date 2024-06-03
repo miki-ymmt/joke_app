@@ -1,0 +1,14 @@
+<!-- app/views/kaminari/_paginator.html.erb -->
+<div class="join">
+  <%= link_to '<', params.permit(:page).merge(page: @jokes.prev_page), class: 'join-item btn btn-square' if @jokes.prev_page %>
+
+  <% (1..@jokes.total_pages).each do |page| %>
+    <% if page == @jokes.current_page %>
+      <%= link_to page, params.permit(:page).merge(page: page), class: 'join-item btn btn-square' %>
+    <% else %>
+      <%= link_to page, params.permit(:page).merge(page: page), class: 'join-item btn btn-square' %>
+    <% end %>
+  <% end %>
+
+  <%= link_to '>', params.permit(:page).merge(page: @jokes.next_page), class: 'join-item btn btn-square' if @jokes.next_page %>
+</div>

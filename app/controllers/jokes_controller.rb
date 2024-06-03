@@ -1,8 +1,8 @@
 class JokesController < ApplicationController
-  before_action :set_joke, only: [:show, :destroy]
+  before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jokes = Joke.all #全てのジョークを取得する
+    @jokes = Joke.page(params[:page]).order(created_at: :desc).per(9) #ページネーションを設定する
   end
 
   def show #選択されたジョークを表示する
@@ -14,13 +14,27 @@ class JokesController < ApplicationController
 
   def create  #選択されたテーマに沿ったジョークを生成する
     theme = params[:theme]  #フォームから送信されたテーマのパラメータを取得する
-    response = generate_joke(theme)  #OpenAI APIを使用してジョークを生成する
-    @joke = Joke.new(content: response, theme: theme)  #生成されたジョークをデータベースに保存する
+    joke_content = generate_joke(theme)  #OpenAI APIを使用してジョークを生成する
+    #Rails.logger.info "Generated Joke: #{joke_content}" #デバッグ用
+    @joke = Joke.new(content: joke_content, theme: theme, title: "おばちゃんのジョーク")  #生成されたジョークをデータベースに保存する
 
     if @joke.save
       redirect_to joke_path(@joke), notice: "ジョークを作ったで！"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
+      #Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
       render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @joke = Joke.find(params[:id])  #選択されたジョークを取得する
+    if @joke.update(joke_params)
+      redirect_to joke_path(@joke), notice: "タイトルを保存しました"  #ジョークが更新された場合、ジョーク一覧ページにリダイレクトする
+    else
+      render :show, status: :unprocessable_entity  #ジョークが更新されなかった場合、ジョーク詳細ページを再表示する
     end
   end
 
@@ -35,9 +49,13 @@ class JokesController < ApplicationController
     @joke = Joke.find(params[:id])  #選択されたジョークを取得する
   end
 
+  def joke_params
+    params.require(:joke).permit(:title)
+  end
+
   def generate_joke(theme)#OpenAI APIに送信するプロンプトを作成する
     prompt =  <<-PROMPT
-    あんたは大阪出身の60歳の愉快なおばちゃんやで。以下のテーマについて関西弁で笑える面白いジョークを話してな～。ジョークは100字以上200字以下でお願いな。最後に関西人がよく言う"知らんけど(笑)"を追記してくれると嬉しいで！:
+    あんたは大阪出身の60歳の愉快なおばちゃんやで。以下のテーマについて関西弁で笑える面白いジョークを話してな～。ジョークは必ず100字以上200字以下でお願いな。最後に関西人がよく言う"知らんけど(笑)"を追記してくれると嬉しいで！:
     テーマ: #{theme}
     PROMPT
 
@@ -50,7 +68,7 @@ class JokesController < ApplicationController
       parameters: {
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
-        max_tokens: 200, #生成されるテキストの最大トークン数を制御
+        max_tokens: 300, #生成されるテキストの最大トークン数を制御
         temperature: 0.7 # 生成されるテキストのランダム性を制御
       }
     )
