@@ -1,9 +1,12 @@
-<div class="joke-detail">
-  <div class="card w-96 bg-blue-200 text-base-content p4 rounded-lg drop-shadow-md">
-    <div class="card-body">
+<div class="chat chat-start ">
+  <div class="chat-image avatar">
+    <div class="w-10 rounded-full">
+      <img alt="Tailwind CSS chat bubble component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    </div>
+  </div>
+    <div class="w-64 md:w-80 lg:w-96 chat-bubble bg-blue-200 text-base-content p4">
       <p class="card-text"><strong>テーマ:</strong> <%= @joke.theme %></p>
       <p class="card-text"><strong>タイトル:</strong> <%= @joke.title %></p>
       <p class="card-text"><%= @joke.content %></p>
     </div>
-  </div>
 </div>
