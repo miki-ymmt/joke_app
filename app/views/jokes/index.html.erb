@@ -6,14 +6,10 @@
         <%= render @jokes %>
       </div>
     </div>
-    <div class="mt-10 flex justify-center">
-      <%= render 'kaminari/paginator', jokes: @jokes %>
+    <div class="mt-20 mb-20 flex justify-center">
+      <%= render 'kaminari/paginator', jokes: @jokes, window: 2 %>
     </div>
   <% else %>
     <p>小話がまだ投稿されてないで！</p>
   <% end %>
-</div>
-<div class="mt-4 flex justify-center mt-20">
-  <%= link_to '新しい小話を聞く', new_joke_path, class: 'btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5' %>
-  <%= link_to 'トップページに戻る', root_path, class: 'btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5' %>
 </div>
