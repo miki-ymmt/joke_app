@@ -1,4 +1,5 @@
 class JokesController < ApplicationController
+  before_action: authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #ログインしていないユーザーをログインページにリダイレクトする
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -27,8 +28,8 @@ class JokesController < ApplicationController
     end
   end
 
-  def edit
-  end
+
+end
 
   def update
     @joke = Joke.find(params[:id])  #選択されたジョークを取得する

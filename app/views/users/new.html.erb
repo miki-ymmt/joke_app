@@ -1,9 +1,31 @@
-<h1>New user</h1>
-
-<%= render "form", user: @user %>
-
-<br>
-
-<div>
-  <%= link_to "Back to users", users_path %>
+<div class="container">
+  <div class="row">
+    <div class="flex flex-col justify-center items-center min-h-screen">
+      <h1>アカウント登録</h1>
+      <%= form_with model: @user, local: true do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, "ニックネーム", class: "block text-sm font-medium text-gray-700"  %>
+          <%= form.text_field :name, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :email, "メールアドレス", class: "block text-sm font-medium text-gray-700" %>
+          <%= form.email_field :email, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :password, "パスワード", class: "block text-sm font-medium text-gray-700" %>
+          <%= form.password_field :password, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :password_confirmation, "パスワード確認", class: "block text-sm font-medium text-gray-700" %>
+          <%= form.password_field :password_confirmation, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+        </div>
+        <div class="mb-3">
+          <%= form.submit "アカウント登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+        </div>
+      <% end %>
+      <div class='text-center'>
+        <%= link_to "戻る", login_path %>
+      </div>
+    </div>
+  </div>
 </div>
