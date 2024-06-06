@@ -8,4 +8,12 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, uniqueness: true
+
+  def self.default_user
+    find_or_create_by(email: 'guest@example.com') do |user|
+      user.name = 'guest'
+      user.password = 'password'
+      user.password_confirmation = 'password'
+    end
+  end
 end
