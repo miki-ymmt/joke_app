@@ -29,8 +29,6 @@ class JokesController < ApplicationController
   end
 
 
-end
-
   def update
     @joke = Joke.find(params[:id])  #選択されたジョークを取得する
     if @joke.update(joke_params)
