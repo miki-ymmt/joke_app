@@ -1,4 +1,5 @@
 class JokesController < ApplicationController
+  skip_before_action :require_login, only: [:index] #ログインしていなくても一覧を見ることができる
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #ログインしていないユーザーをログインページにリダイレクトする
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
