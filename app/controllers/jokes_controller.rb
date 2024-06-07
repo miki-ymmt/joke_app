@@ -1,6 +1,5 @@
 class JokesController < ApplicationController
-  skip_before_action :require_login, only: [:index] #ログインしていなくても一覧を見ることができる
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #ログインしていないユーザーをログインページにリダイレクトする
+  before_action :require_login, except: [:index] #ログインしていなくても一覧を見ることができる
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,12 +17,12 @@ class JokesController < ApplicationController
     theme = params[:theme]  #フォームから送信されたテーマのパラメータを取得する
     joke_content = generate_joke(theme)  #OpenAI APIを使用してジョークを生成する
     #Rails.logger.info "Generated Joke: #{joke_content}" #デバッグ用
-    @joke = Joke.new(content: joke_content, theme: theme)  #生成されたジョークをデータベースに保存する
+    @joke = Joke.new(content: joke_content, theme: theme, user: current_user)  #生成されたジョークをデータベースに保存する
 
     if @joke.save
-      redirect_to edit_joke_path(@joke), notice: "小話を登録しました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
+      redirect_to joke_path(@joke), notice: "小話を登録しました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
-      #Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
+      Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
       flash[:alert] = "もう一回テーマを選んでください"
       render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
     end
