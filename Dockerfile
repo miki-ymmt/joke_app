@@ -38,7 +38,8 @@ RUN bundle install && \
 
 # Install node modules
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile && \
+    yarn add tailwindcss@latest postcss@latest autoprefixer@latest esbuild@latest
 
 # Copy application code
 COPY . .

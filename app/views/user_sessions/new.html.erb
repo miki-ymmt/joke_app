@@ -13,8 +13,9 @@
         <%= form.submit "ログイン", class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5" %>
       </div>
     <% end %>
-    <div class='text-center'>
-      <%= link_to 'アカウント登録', new_user_path %>
-      <%= link_to 'パスワードをお忘れの方はこちら', '#' %>
+    <div class='text-center ml-15'>
+      <%= link_to 'アカウント登録', new_user_path, class: "hover:text-rose-400" %>
+      |
+      <%= link_to 'パスワードをお忘れの方はこちら', '#', class: "hover:text-rose-400" %>
     </div>
 </div>

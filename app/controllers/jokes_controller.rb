@@ -6,8 +6,7 @@ class JokesController < ApplicationController
     @jokes = Joke.page(params[:page]).order(created_at: :desc).per(6) #ページネーションを設定する
   end
 
-  def show #選択されたジョークを表示する
-  end
+  def show; end #選択されたジョークを表示する
 
   def new  #新しいジョークを作成する
     @themes = ["仕事", "学校", "家族", "友達", "食べ物", "お金", "趣味", "恋愛"]
@@ -20,14 +19,15 @@ class JokesController < ApplicationController
     @joke = Joke.new(content: joke_content, theme: theme, user: current_user)  #生成されたジョークをデータベースに保存する
 
     if @joke.save
-      redirect_to joke_path(@joke), notice: "小話を登録しました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
+      redirect_to joke_path(@joke), notice: "小話が出来上がりました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
       Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
-      flash[:alert] = "もう一回テーマを選んでください"
+      flash.now[:alert] = "もう一回テーマを選んでください"
       render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
     end
   end
 
+  def edit; end
 
   def update
     @joke = Joke.find(params[:id])  #選択されたジョークを取得する

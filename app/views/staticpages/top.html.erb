@@ -1,36 +1,42 @@
 <!-- app/views/static_pages/top.html.erb -->
-<div class="flex flex-col justify-center items-center min-h-screen bg-white">
-  <h2 class="text-3xl text-center mb-6 font-bold text-yellow-800">
-  笑いのタネ、集めました
+<div class="flex flex-col justify-center items-center min-h-screen bg-white p-6">
+  <h1 class="text-4xl text-center mb-6 font-extrabold text-yellow-800">
+    笑い、足りていますか？
+  </h1>
+
+
+  <h2 class="text-2xl text-center mb-6 font-bold text-gray-800">
+  日常にwaraiを。
   </h2>
+
   <p class="text-lg text-center mb-10 text-gray-800">
-    使い方は簡単！
-    <br>
-    <br>
-    <strong>1.聞きたい小話のテーマを選ぶ</strong>
-    <br>
-    大阪出身の元気なおばちゃんが、選んだテーマに合うとっておきの小話を披露してくれます。
-    <br>
-    <br>
-    <strong>2.タイトルを決めて投稿</strong>
-    <br>
-    おばちゃんの小話を聞いてピッタリなタイトルをつけてみて。
-    <br>
-    あなたのセンスが試されるかも！
-    <br>
-    <br>
-    <strong>3.いいね、シェアで広める</strong>
-    <br>
-    おもしろかったら、いいねやXでシェアしてみんなにも教えてあげて。
-    <br>
-    <br>
-    <br>
-    さあ、早速テーマを選んでおもしろい小話を聞いてみて。
+    使い方はとっても簡単！
   </p>
-  <div class="flex flex-col items-center mt-4 space-y-2">
-    <div class="text-xs badge badge-outline">※会員限定機能です</div>
-    <br>
-    <%= link_to jokes_new_path, class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5 flex justify-center" do %>
+
+  <div class="text-left max-w-md w-full">
+    <div class="flex items-center mb-4">
+      <p class="text-lg">
+        <strong>1. テーマを選ぶ</strong><br>
+        大阪出身の元気なおばちゃんが、選んだテーマに合ったとっておきの小話を披露！
+      </p>
+    </div>
+    <div class="flex items-center mb-4">
+      <p class="text-lg">
+        <strong>2. タイトルを決める</strong><br>
+        小話を聞いて、ぴったりなタイトルをつけてみて。センスが問われるかも！？
+      </p>
+    </div>
+    <div class="flex items-center mb-4">
+      <p class="text-lg">
+        <strong>3. いいね＆シェア</strong><br>
+        面白かったら、いいねやシェアでみんなに教えてあげよう！
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center mt-4">
+    <div class="text-xs badge badge-outline mb-2">※会員限定機能です</div>
+    <%= link_to login_path, class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-2" do %>
       おばちゃんの小話を聞く
     <% end %>
   </div>

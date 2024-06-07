@@ -20,11 +20,11 @@
           <%= form.password_field :password_confirmation, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
         </div>
         <div class="mb-3">
-          <%= form.submit "アカウント登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+          <%= form.submit "アカウント登録", class: "btn btn-outline btn-neutral text-gray-700 hover:text- mt-4 mb-10 ml-5" %>
         </div>
       <% end %>
       <div class='text-center'>
-        <%= link_to "戻る", login_path %>
+        <%= link_to "戻る", login_path, class: "hover:text-rose-400" %>
       </div>
     </div>
   </div>
