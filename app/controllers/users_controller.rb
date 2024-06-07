@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to jokes_path, notice: "アカウントを作成しました"
     else
+      #logger.debug @user.errors.full_messages.join(", ") #デバッグ用
       render :new, status: :unprocessable_entity
     end
   end
