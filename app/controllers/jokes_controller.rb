@@ -21,7 +21,7 @@ class JokesController < ApplicationController
     if @joke.save
       redirect_to joke_path(@joke), notice: "小話が出来上がりました"  #ジョークが保存された場合、ジョーク詳細ページにリダイレクトする
     else
-      Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
+      #Rails.logger.error "Failed to save joke: #{@joke.errors.full_messages.join(', ')}" #デバッグ用
       flash.now[:alert] = "もう一回テーマを選んでください"
       render :new, status: :unprocessable_entity  #ジョークが保存されなかった場合、新規ジョーク作成ページを再表示する
     end
@@ -50,7 +50,7 @@ class JokesController < ApplicationController
   end
 
   def joke_params
-    params.require(:joke).permit(:title)
+    params.require(:joke).permit(:title, :user_id)
   end
 
   def generate_joke(theme)#OpenAI APIに送信するプロンプトを作成する

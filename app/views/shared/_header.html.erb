@@ -3,9 +3,9 @@
     <%= link_to '笑い、足りてる？', root_path, class: 'btn btn-ghost text-xl text-gray-800' %>
   </div>
   <div class="flex-none">
-    <%= link_to 'みんなの笑いを覗く', jokes_path, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
-    <%= link_to '小話を聞く', new_joke_path, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
-    <%= link_to 'マイページ', "#", class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
-    <%= button_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
+    <%= link_to t('header.joke_index'), jokes_path, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
+    <%= link_to t('header.new_joke'), new_joke_path, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
+    <%= link_to t('header.mypage'), user_path(current_user), class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
+    <%= button_to t('header.logout'), logout_path, method: :delete, class: 'btn btn-ghost text-sm text-gray-800 font-normal' %>
   </div>
 </div>

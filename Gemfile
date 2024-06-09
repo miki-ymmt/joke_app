@@ -7,6 +7,7 @@ gem 'kaminari'
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
 gem 'sorcery'
+gem 'rails-i18n', '~> 7.0.0'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
