@@ -1,17 +1,17 @@
-<div class>
+<div class="flex flex-col justify-center items-center min-h-screen">
   <h1 class="text-3xl font-bold mb-10 flex justify-center mt-20"><%= current_user.name %>さんのプロフィール</h1>
-
-<div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <%= link_to "編集", edit_user_path(@user), class:"btn btn-outline btn-accent" %>
+  <div class="card w-96 bg-base-100 shadow-xl mb-10">
+    <div class="card-body items-center text-center">
+      <h2 class="card-title"><%= current_user.name %></h2>
+      <p>メールアドレス: <%= current_user.email %></p>
+      <div class="card-actions justify-center">
+        <%= link_to "編集", edit_user_path(@user), class:"btn btn-outline btn-neutral bg-primary/20 btn-sm mt-2" %>
+      </div>
     </div>
   </div>
 </div>
 
-<h1 class="text-3xl font-bold mb-10 flex justify-center mt-20"><%= current_user.name %>さんの小話一覧</h1>
+<h1 class="text-3xl font-bold mb-10 flex justify-center mt-5"><%= current_user.name %>さんの小話一覧</h1>
 
 <% if @user.jokes.any? %>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 gap-x-36">
@@ -25,6 +25,5 @@
     <%= paginate @jokes %>
   </div>
 <% else %>
-  <p>小話がまだ投稿されていません。</p>
+  <p>小話がまだ投稿されてないで！</p>
 <% end %>
-

@@ -24,8 +24,7 @@ class UsersController < ApplicationController
     @jokes = @user.jokes.page(params[:page]).order(created_at: :desc).per(6)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
