@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
 
 #current_userメソッドを定義する
   def current_user
+    begin
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    rescue ActiveRecord::RecordNotFound  #エラーが発生してもプログラムが停止しないようにする
+      nil  #ユーザーが存在しない場合にはcurrent_userメソッドがnilを返すようにする
+    end
   end
 
   private

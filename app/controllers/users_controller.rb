@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    reset_session
     redirect_to root_path, status: :see_other, notice: "アカウントを削除しました"
   end
 

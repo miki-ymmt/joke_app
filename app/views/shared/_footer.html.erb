@@ -1,7 +1,7 @@
 <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded space-y-1">
   <nav class="flex space-x-4"> <!-- flexとspace-x-4で横並びと間隔を設定 -->
     <%= link_to "お問い合わせ", "https://forms.gle/LZqJ3Uru6r1RPGDR9", target: "_blank", rel: "noopener noreferrer", class: "mr-2 hover:text-rose-400" %>
-    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんの面白い小話を聞いてみた！】%0a%0a#{@jokes}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！】%0a%0a#{@jokes}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
     <%= image_tag 'logo-black.png', class: 'w-5 h-5' %>
     <% end %>
   </nav>
