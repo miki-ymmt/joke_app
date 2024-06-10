@@ -4,7 +4,9 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = []
+require_dependency 'application_mailer'
+require_dependency 'user_mailer'
+Rails.application.config.sorcery.submodules = [:reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -226,7 +228,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  
+
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
@@ -243,6 +245,8 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.scope = "openid"
   # --- user config ---
   config.user_config do |user|
+    user.reset_password_mailer = UserMailer
+    user.reset_password_email_method_name = :reset_password_email
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
@@ -407,7 +411,6 @@ Rails.application.config.sorcery.configure do |config|
     # Reset password email method on your mailer class.
     # Default: `:reset_password_email`
     #
-    # user.reset_password_email_method_name =
 
     # When true, sorcery will not automatically
     # send the password reset details email, and allow you to

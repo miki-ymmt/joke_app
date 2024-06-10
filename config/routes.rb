@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   get 'user_sessions/new'
   get 'user_sessions/create'
-  get 'user_sessions/destroy'
+  delete 'user_sessions/destroy'
   get 'jokes/index'
   get 'jokes/show'
   get 'jokes/new'
   get 'jokes/create'
-  get 'jokes/destroy'
+  delete 'jokes/destroy'
   root 'staticpages#top'
   #resources :tasks
   resources :jokes, only: %i[new create edit update show index destroy]
   resources :users, only: %i[new create show edit update destroy]
+  resources :password_resets, only: %i[new create edit update]
   get "login", to: "user_sessions#new" #ログインページ
   post "login", to: "user_sessions#create" #ログイン機能
   delete "logout", to: "user_sessions#destroy"  #ログアウト機能
