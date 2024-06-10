@@ -1,0 +1,5 @@
+<%= search_form_for @q, url: url do |form| %>
+  <div class="input-group mb-3 flex flex-col justify-center items-center min-h-screen">
+    <%= form.search_field :title_or_content_or_theme_cont, placeholder: "キーワード検索", class: "form-control" %>
+    <%= form.submit "検索", class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100" %>
+<% end %>

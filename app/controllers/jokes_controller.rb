@@ -3,8 +3,10 @@ class JokesController < ApplicationController
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jokes = Joke.page(params[:page]).order(created_at: :desc).per(6) #ページネーションを設定する
+    @q = Joke.includes(:user).ransack(params[:q])  #ransackを使用して検索フォームを作成する
+    @jokes = @q.result(distinct: true).order(created_at: :desc).page(params[:page]).per(6) #ページネーションを設定する
   end
+
 
   def show; end #選択されたジョークを表示する
 
