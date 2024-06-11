@@ -1,19 +1,11 @@
 <div class="flex flex-col justify-center items-center min-h-screen">
   <h1 class="text-3xl font-bold mb-10 text mt-20">小話の詳細</h1>
   <%= render partial: 'joke_detail', locals: { joke: @joke } %>
+  <% if current_user == @joke.user %>
+    <%= link_to "編集", edit_joke_path(@joke), class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5" %>
+    <%= link_to "削除", joke_path(@joke), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: "btn btn-outline btn-neutral text-red-600 mt-4 mb-10 ml-5" %>
+  <% end %>
   <div class="mt-7">
-    <%= form_with model: @joke, url: joke_path(@joke), method: :patch, local: true do |form| %>
-      <div class="mb-8 mt-8 justify-center items-center">
-        <%= form.label :title, "ぴったりなタイトルをつけてや！" %>
-        <br>
-        <%= form.text_field :title, class: "input input-bordered w-full max-w-xs mt-4", placeholder: "1字〜20字以内にしてな" %>
-      </div>
-      <div>
-        <%= form.submit "タイトルを保存する", class: 'btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5' %>
-      </div>
-    <% end %>
-  </div>
-  <div class="mt-7">
-  <%= link_to "戻る", jokes_path, class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5" %>
+    <%= link_to "戻る", jokes_path, class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5" %>
   </div>
 </div>

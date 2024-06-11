@@ -86,9 +86,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'joke-maker.onrender.com', protocol: 'https' }  #メール内に記載されるURLにホスト名を設定
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.logger = Logger.new(STDOUT)
-  config.action_mailer.logger.level = Logger::DEBUG
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
