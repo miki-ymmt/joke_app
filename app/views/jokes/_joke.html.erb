@@ -2,14 +2,21 @@
   <div class="card-body p-8 text-center">
     <p class="card-text text-xs"><strong>テーマ:</strong> <%= joke.theme %></p>
     <p class="text-sm font-bold"><%= joke.title %></p>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！】%0a%0a#{joke.title}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: joke.title do %>
+        <%= image_tag 'logo-black.png', class: 'w-5 h-5 ml-2' %>
+    <% end %>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
     <p class="card-text text-xs"><%= joke.content %></p>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
     <p>by <%= joke.user.name %></p>
     <% if joke.user == current_user %>
-      <div class="card-actions justify-center">
-        <%= link_to "編集", edit_joke_path(joke), class: "btn btn-outline btn-neutral bg-primary/20 btn-sm mt-2" %>
-        <%= link_to "削除", joke_path(joke), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: "btn btn-outline btn-neutral bg-primary/20 btn-sm mt-2" %>
+      <div class="card-actions flex justify-center space-x-4 mt-2">
+        <%= link_to edit_joke_path(joke) do %>
+          <i class="fas fa-edit fa-lg"></i>
+        <% end %>
+        <%= link_to joke_path(joke), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
+          <i class="fas fa-trash fa-lg"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
