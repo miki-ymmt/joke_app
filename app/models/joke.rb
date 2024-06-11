@@ -2,7 +2,7 @@ class Joke < ApplicationRecord
   belongs_to :user
 
   validates :content, presence: true, length: { minimum: 100, maximum: 200}
-  validates :theme, presence: true, inclusion: { in: %w(仕事 学校 家族 友達 食べ物 趣味 恋愛) }
+  validates :theme, presence: true, inclusion: { in: %w(仕事 学校 家族 友達 食べ物 趣味 恋愛 人生) }
   validates :title, length: { minimum: 1, maximum: 20 }, allow_nil: true
 
   def self.searchable_attributes
