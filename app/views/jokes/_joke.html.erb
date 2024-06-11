@@ -1,7 +1,7 @@
 <div class="card w-64 sm:w-96 md:w-80 h-full bg-blue-200 text-base-content p4 rounded-lg drop-shadow-md">
   <div class="card-body p-8 text-center">
     <p class="card-text text-xs"><strong>テーマ:</strong> <%= joke.theme %></p>
-    <%= link_to joke.title, joke_path(joke), class: 'text-sm font-bold hover:text-rose-400' %>
+    <p class="text-sm font-bold"><%= joke.title %></p>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
     <p class="card-text text-xs"><%= joke.content %></p>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>

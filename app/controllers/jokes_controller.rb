@@ -1,5 +1,5 @@
 class JokesController < ApplicationController
-  before_action :require_login, except: [:index, :show] #ログインしていなくても一覧と詳細を見ることができる
+  before_action :require_login, except: [:index] #ログインしていなくても一覧を見ることができる
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
@@ -33,7 +33,7 @@ class JokesController < ApplicationController
   def update
     @joke = Joke.find(params[:id])  #選択されたジョークを取得する
     if @joke.update(joke_params)
-      redirect_to joke_path(@joke), notice: "タイトルを保存しました"  #ジョークが更新された場合、ジョーク一覧ページにリダイレクトする
+      redirect_to jokes_path, notice: "タイトルを保存しました"  #ジョークが更新された場合、ジョーク一覧ページにリダイレクトする
     else
       render :edit, status: :unprocessable_entity  #ジョークが更新されなかった場合、ジョーク詳細ページを再表示する
     end
