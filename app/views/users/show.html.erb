@@ -2,7 +2,8 @@
   <h1 class="text-3xl font-bold mb-10 flex justify-center mt-15"><%= current_user.name %>さんのプロフィール</h1>
   <div class="card w-96 bg-base-100 shadow-xl mb-10">
     <div class="card-body items-center text-center">
-      <h2 class="card-title"><%= current_user.name %></h2>
+      <%= image_tag current_user.avatar.url, class: "w-24 rounded-full ring ring-neutral-500/50 ring-offset-base-100 ring-offset-2", size: '100x100' %>
+      <h2 class="card-title mt-4"><%= current_user.name %></h2>
       <p>メールアドレス: <%= current_user.email %></p>
       <div class="card-actions justify-center">
         <%= link_to "編集", edit_user_path(@user), class:"btn btn-outline btn-neutral bg-primary/20 btn-sm mt-2" %>

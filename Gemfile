@@ -10,6 +10,7 @@ gem 'sorcery'
 gem 'rails-i18n', '~> 7.0.0'
 gem 'ransack'
 gem 'config'
+gem 'carrierwave', '~> 3.0'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

@@ -8,3 +8,14 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
+        avatar: このアバター
+  activemodel:
+    errors:
+      models:
+        user:
+          attributes:
+            avatar:
+              content_type: "のファイル拡張子は許可されていません"
+  errors:
+    messages:
+      extension_allowlist_error: "のファイル拡張子は許可されていません"
