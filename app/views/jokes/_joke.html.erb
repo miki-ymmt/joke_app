@@ -8,20 +8,21 @@
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
     <p class="card-text text-xs"><%= joke.content %></p>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
-    <div class="flex items-center justify-center">
-      <dic class="flex-shrink-0 ml-4">
-      <%= image_tag joke.user.avatar.url, class: "w-8 h-8 rounded-full ring ring-neutral-500/50 ring-offset-base-100 ring-offset-2 mr-2" if joke.user.avatar? %>
-      <p>by <%= joke.user.name %></p>
-    </div>
-    <% if joke.user == current_user %>
-      <div class="card-actions flex justify-center space-x-4 mt-2">
-        <%= link_to edit_joke_path(joke) do %>
-          <i class="fas fa-edit fa-lg"></i>
-        <% end %>
-        <%= link_to joke_path(joke), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
-          <i class="fas fa-trash fa-lg"></i>
-        <% end %>
+    <div class="flex justify-between items-center mt-2">
+      <div class="flex items-center">
+        <%= image_tag joke.user.avatar.url, class: "w-8 h-8 rounded-full ring ring-neutral-500/50 ring-offset-base-100 ring-offset-2 mr-2" if joke.user.avatar? %>
+        <p class="text-base font-semibold"><%= joke.user.name %></p>
       </div>
-    <% end %>
+      <% if joke.user == current_user %>
+        <div class="flex space-x-8">
+          <%= link_to edit_joke_path(joke) do %>
+            <i class="fas fa-edit fa-lg"></i>
+          <% end %>
+          <%= link_to joke_path(joke), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
+            <i class="fas fa-trash fa-lg"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
