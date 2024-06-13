@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-night {
-    background-image: url('night_background.png');
-    background-size: cover;
-    background-position: center;
+.text-neonYellow {
+    color: #ffd700;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: bold;
+}
+
+.bg-neonPink {
+    background-color: #ff69b4;
+    color: #1a202c;
+}
+
+.hover\:bg-neonPink:hover {
+    background-color: #ff1493;
 }
