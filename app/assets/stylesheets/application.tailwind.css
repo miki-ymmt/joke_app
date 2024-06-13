@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-night {
+    background-image: url('night_background.png');
+    background-size: cover;
+    background-position: center;
+}

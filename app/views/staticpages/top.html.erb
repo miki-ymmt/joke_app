@@ -1,17 +1,9 @@
 <!-- app/views/static_pages/top.html.erb -->
-<div class="flex flex-col justify-center items-center min-h-screen bg-white p-6">
-  <h1 class="text-4xl text-center mb-6 font-extrabold text-yellow-800">
-    笑い、足りていますか？
-  </h1>
-
-
-  <h2 class="text-2xl text-center mb-6 font-bold text-gray-800">
-  日常にwaraiを。
+<div class="flex flex-col justify-center items-center min-h-screen bg-gray-950 text-yellow-200 p-6">
+  <%= image_tag "logo.png", class: "w-100 h-100 mb-4" %>
+  <h2 class="text-2xl text-center mb-6 font-bold text-neonYellow">
+  日常に"ええワライ"を。
   </h2>
-
-  <p class="text-lg text-center mb-10 text-gray-800">
-    使い方はとっても簡単！
-  </p>
 
   <div class="text-left max-w-md w-full">
     <div class="flex items-center mb-4">
@@ -22,7 +14,7 @@
     </div>
     <div class="flex items-center mb-4">
       <p class="text-lg">
-        <strong>2. タイトルを決める</strong><br>
+        <strong class>2. タイトルを決める</strong><br>
         小話を聞いて、ぴったりなタイトルをつけてみて。センスが問われるかも！？
       </p>
     </div>
@@ -35,8 +27,8 @@
   </div>
 
   <div class="flex flex-col items-center mt-4">
-    <div class="text-xs badge badge-outline mb-2">※会員限定機能です</div>
-    <%= link_to login_path, class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-2" do %>
+    <div class="text-xs badge badge-outline mb-2 ">※会員限定機能です</div>
+    <%= link_to login_path, class: "btn bg-pink-200 opacity-80 mt-8" do %>
       おばちゃんの小話を聞いてみる
     <% end %>
   </div>
