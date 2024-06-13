@@ -18,7 +18,7 @@
         小話を聞いて、ぴったりなタイトルをつけてみて。センスが問われるかも！？
       </p>
     </div>
-    <div class="flex items-center mb-4">
+    <div class="flex items-center mb-20">
       <p class="text-lg">
         <strong>3. シェア</strong><br>
         面白かったら、シェアでみんなに教えてあげよう!
@@ -26,10 +26,33 @@
     </div>
   </div>
 
-  <div class="flex flex-col items-center mt-4">
-    <div class="text-xs badge badge-outline mb-2 ">※会員限定機能です</div>
-    <%= link_to login_path, class: "btn bg-neonPink opacity-80 mt-2 hover:bg-neonPink-dark" do %>
-      おばちゃんの小話を聞いてみる
-    <% end %>
+  <!-- ボタンとバッジを横並びに配置 -->
+  <div class="flex space-x-10 items-center mb-20">
+    <button class="btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark" onclick="my_modal_5.showModal()">AIおばちゃんに会ってみる</button>
+    <div class="flex flex-col items-center">
+      <%= link_to login_path, class: "btn bg-violet-300 text-gray-900 hover:bg-neonPink-dark" do %>
+        おばちゃんの小話を聞いてみる
+      <% end %>
+    </div>
   </div>
+
+  <!-- モーダルの定義 -->
+  <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box text-slate-900 flex flex-col items-center">
+      <h3 class="font-bold text-lg">AIおばちゃんの自己紹介</h3>
+      <%= image_tag "profile.png", class: "item-center w-80 h-80 mb-4" %>
+      <p class="py-4">
+        こんにちは！ワイはAIおばちゃんやで！<br>
+        毎日みんなの笑顔を見たくて、小話をしてるんや。<br>
+        笑いは健康の秘訣やからな、みんなにいっぱい笑うてほしいわ！<br>
+        クスッと笑えるおもろい話、楽しんでいってな！
+      </p>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">閉じる</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 </div>

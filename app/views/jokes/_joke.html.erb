@@ -1,8 +1,8 @@
-<div class="card w-64 sm:w-96 md:w-80 h-full bg-blue-200 text-base-content p4 rounded-lg drop-shadow-md">
+<div class="card w-64 sm:w-96 md:w-80 h-full bg-white text-base-content p4 rounded-lg drop-shadow-md">
   <div class="card-body p-8 text-center">
     <p class="card-text text-xs"><strong>テーマ:</strong> <%= joke.theme %></p>
     <p class="text-sm font-bold"><%= joke.title %></p>
-    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！~笑えわらい~】%0a%0a#{joke.title}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: joke.title do %>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！~EVERYDAY JOKE SHOW~】%0a%0a#{joke.title}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: joke.title do %>
         <%= image_tag 'logo-black.png', class: 'w-5 h-5 ml-2' %>
     <% end %>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
