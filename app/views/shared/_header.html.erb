@@ -1,13 +1,13 @@
-<div class="navbar bg-gray-950 text-white">
+<div class="navbar bg-gray-950 text-yellow-200">
   <div class="flex-1">
     <%= link_to root_path, class: 'btn btn-ghost text-xl text-gray-200' do %>
       <%= image_tag 'lip.png', class: 'w-12 h-12' %>
     <% end %>
   </div>
   <div class="flex-none">
-    <%= link_to t('header.joke_index'), jokes_path, class: 'btn btn-ghost text-sm font-normal' %>
-    <%= link_to t('header.new_joke'), new_joke_path, class: 'btn btn-ghost text-sm font-normal' %>
-    <%= link_to t('header.mypage'), user_path(current_user), class: 'btn btn-ghost text-sm font-normal' %>
-    <%= button_to t('header.logout'), logout_path, method: :delete, class: 'btn btn-ghost text-sm font-normal' %>
+    <%= link_to t('header.joke_index'), jokes_path, class: 'btn btn-ghost text-sm font-normal hover:bg-sky-300' %>
+    <%= link_to t('header.new_joke'), new_joke_path, class: 'btn btn-ghost text-sm font-normal hover:bg-sky-300' %>
+    <%= link_to t('header.mypage'), user_path(current_user), class: 'btn btn-ghost text-sm font-normal hover:bg-sky-300' %>
+    <%= button_to t('header.logout'), logout_path, method: :delete, class: 'btn btn-ghost text-sm font-normal hover:bg-sky-300' %>
   </div>
 </div>
