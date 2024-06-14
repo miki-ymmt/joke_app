@@ -1,36 +1,37 @@
 <!-- app/views/static_pages/top.html.erb -->
 <div class="flex flex-col justify-center items-center min-h-screen bg-gray-950 text-yellow-200 p-6">
   <%= image_tag "logo.png", class: "w-100 h-100 mb-4" %>
-  <h2 class="text-2xl text-center mb-6 font-bold">
-  AIおばちゃんが、あなたの日常に笑いをお届けします！
-  </h2>
+  <h3 class="text-2xl text-center mb-6 font-bold">
+  AIおばちゃんが日常のことについて<br>
+  深く話したり話さなかったりするアプリです
+  </h3>
 
-  <div class="text-left max-w-md w-full">
-    <div class="flex items-center mb-4">
-      <p class="text-lg">
-        <strong>1. テーマを選ぶ</strong><br>
-        AIの元気なおばちゃんが、選んだテーマに合ったとっておきの小話を披露!
+  <div class="text-left max-w-md max-w-md w-full space-y-6">
+    <div class="flex items-center mb-4 space-x-2">
+      <p class="text-ml leading-loose">
+        <strong>🌈テーマを選ぶ</strong><br>
+        AIおばちゃんが、選んだテーマに合ったとっておきの小話を披露!
       </p>
     </div>
-    <div class="flex items-center mb-4">
-      <p class="text-lg">
-        <strong class>2. タイトルを決める</strong><br>
-        小話を聞いて、ぴったりなタイトルをつけてみて。センスが問われるかも！？
+    <div class="flex items-center mb-4 space-x-2">
+      <p class="text-ml leading-loose">
+        <strong class>📝タイトルを決める</strong><br>
+        小話を聞いて、ぴったりなタイトルをつけてみて。
       </p>
     </div>
-    <div class="flex items-center mb-20">
-      <p class="text-lg">
-        <strong>3. シェア</strong><br>
+    <div class="flex items-center mb-20 space-x-2">
+      <p class="text-ml leading-loose">
+        <strong>🌏シェア</strong><br>
         面白かったら、シェアでみんなに教えてあげよう!
       </p>
     </div>
   </div>
 
-  <!-- ボタンとバッジを横並びに配置 -->
-  <div class="flex space-x-10 items-center mb-20">
-    <button class="btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark" onclick="my_modal_5.showModal()">AIおばちゃんに会ってみる</button>
+  <!-- ボタンを横並びに配置 -->
+  <div class="flex space-x-10 items-center mt-20 mb-6">
+    <button class="btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="my_modal_5.showModal()">AIおばちゃんに会ってみる</button>
     <div class="flex flex-col items-center">
-      <%= link_to login_path, class: "btn bg-violet-300 text-gray-900 hover:bg-neonPink-dark" do %>
+      <%= link_to login_path, class: "btn bg-violet-300 text-gray-900 hover:bg-neonPink-dark hover:shadow-sm hover:translate-y-0.5 transform transition" do %>
         おばちゃんの小話を聞いてみる
       <% end %>
     </div>
