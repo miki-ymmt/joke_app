@@ -1,8 +1,8 @@
 <div class="flex flex-col justify-center items-center min-h-screen bg-gray-950 text-yellow-200">
   <%= image_tag 'ice.png', class: 'w-80 h-80 mb-4' %>
   <%= form_with url: jokes_path, method: :post, local: true do |form| %>
-    <label for="theme" class="block text-ml font-medium mt-2">小話のテーマを選ぶ</label>
-    <%= form.select :theme, options_for_select(['仕事', '学校', '家族', '友達', '食べ物', '趣味', 'お金', '恋愛', '人生']), { prompt: 'テーマを選んでや～' }, class: "mt-1 block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-indigo-300 focus:border-indigo-500 sm:text-lg rounded-md bg-pink-200/50 border-2 border-yellow-400" %>
-    <%= form.submit "おばちゃん、出番やで！", class: "btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark rounded-r-lg mt-8 text-ml w-full hover:shadow-sm hover:translate-y-0.5 transform transition" %>
+    <label for="theme" class="block text-ml font-medium mt-2 text-yellow-300">小話のテーマを選ぶ</label>
+    <%= form.select :theme, options_for_select(['仕事', '学校', '家族', '友達', '食べ物', '趣味', 'お金', '恋愛', '人生']), { prompt: 'テーマを選んでや～' }, class: "mt-1 block w-full pl-3 pr-10 w-full py-3 text-base border-gray-300 focus:outline-none focus:ring-indigo-300 focus:border-indigo-500 sm:text-lg rounded-md bg-pink-200/50 border-2 border-yellow-400" %>
+    <%= form.submit "話聞かせて！", class: "btn bg-yellow-300 text-gray-900 hover:bg-yellow-400 rounded-r-lg mt-8 text-ml w-full hover:shadow-sm hover:translate-y-0.5 transform transition" %>
   <% end %>
 </div>

@@ -1,8 +1,8 @@
 <%= search_form_for @q, url: url do |form| %>
   <div class="flex justify-center items-center h-32">
     <div class="flex space-x-2 bg-gray-950 bg-opacity-75 bg-opacity-90 rounded-lg">
-      <%= form.search_field :title_or_content_or_theme_cont, placeholder: "気になるワードを入れてや！", class: "form-control px-4 py-2 rounded-lg focus:outline-none text-lg w-80 text-base-content" %>
-      <%= form.submit "検索", class: "btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark rounded-r-lg px-4 py-2" %>
+      <%= form.search_field :title_or_content_or_theme_cont, placeholder: "気になるワードを入れてや！", class: "form-control px-4 py-2 rounded-lg focus:outline-none text-sm sm:text-lg w-full sm:w-80 text-base-content" %>
+      <%= form.submit "検索", class: "btn bg-pink-300 text-gray-900 hover:bg-pink-500 rounded-r-lg px-4 py-2" %>
     </div>
   </div>
 <% end %>

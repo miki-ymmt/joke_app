@@ -13,8 +13,11 @@ module.exports = {
         'noto': ['Noto Sans JP', 'sans-serif'],
         'kaisei': ['Kaisei Tokumin', 'san-serif']
       },
+      fontSize: {
+        'xxs': '0.625rem',
+      },
     },
-  },
+ },
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["light", "dark", "nord"],

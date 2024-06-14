@@ -1,34 +1,34 @@
 <!-- app/views/static_pages/top.html.erb -->
 <div class="flex flex-col justify-center items-center min-h-screen bg-gray-950 text-yellow-200 p-6">
-  <%= image_tag "logo.png", class: "w-100 h-100 mb-4" %>
-  <h3 class="font-kaisei text-2xl text-center mb-6 font-bold">
+  <%= image_tag "logo.png", class: "w-30 h-30 sm:w-100 sm:h-100 mb-4" %>
+  <h3 class="font-kaisei text-lg sm:text-2xl text-center mb-6 font-bold">
   AIおばちゃんが日常のことについて<br>
   深く話したり話さなかったりするアプリです
   </h3>
 
-  <div class="text-left max-w-md max-w-md w-full space-y-6 mt-10">
-    <div class="flex items-center mb-4 space-x-2">
-      <p class="text-ml leading-loose">
-        <strong>🌈テーマを選ぶ</strong><br>
+  <div class="font-kaisei text-white text-center max-w-md max-w-md w-full space-y-6 mt-20">
+    <div class="flex flex-col items-center mb-4 space-x-2">
+      <p class="text-sm sm:text-lg leading-loose text-center">
+        <strong>💋テーマを選ぶ</strong><br>
         AIおばちゃんが選んだテーマに合った小話を披露!
       </p>
     </div>
-    <div class="flex items-center mb-4 space-x-2">
-      <p class="text-ml leading-loose">
-        <strong class>📝タイトルを決める</strong><br>
+    <div class="flex flex-col items-center mb-4 space-x-2">
+      <p class="text-sm sm:text-lg leading-loose text-center">
+        <strong class>💋タイトルを決める</strong><br>
         小話を聞いて、ぴったりなタイトルをつけてみて。
       </p>
     </div>
-    <div class="flex items-center mb-20 space-x-2">
-      <p class="text-ml leading-loose">
-        <strong>🌏シェア</strong><br>
+    <div class="flex flex-col items-center mb-20 space-x-2">
+      <p class="text-sm sm:text-lg leading-loose text-center">
+        <strong>💋シェア</strong><br>
         面白かったら、シェアでみんなに教えてあげよう!
       </p>
     </div>
   </div>
 
   <!-- ボタンを横並びに配置 -->
-  <div class="flex space-x-10 items-center mt-20 mb-6">
+  <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10 items-center mt-20 mb-6">
     <button class="btn bg-pink-300 text-gray-900 hover:bg-neonPink-dark hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="my_modal_5.showModal()">AIおばちゃんに会ってみる</button>
     <div class="flex flex-col items-center">
       <%= link_to login_path, class: "btn bg-violet-300 text-gray-900 hover:bg-neonPink-dark hover:shadow-sm hover:translate-y-0.5 transform transition" do %>
@@ -39,10 +39,10 @@
 
   <!-- モーダルの定義 -->
   <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box text-slate-900 flex flex-col items-center">
-      <h3 class="font-bold text-2xl mb-4">Who is AIおばちゃん?</h3>
+    <div class="modal-box text-slate-900 flex flex-col items-center w-full sm:w-auto">
+      <h3 class="font-bold text-xl sm:text-2xl mb-4">Who is AIおばちゃん?</h3>
       <%= image_tag "profile.png", class: "item-center w-80 h-80 mb-4" %>
-      <p class="py-4">
+      <p class="py-4 text-sm sm:text-base">
         こんにちは！ワイはAIおばちゃんやで！<br>
         毎日みんなの笑顔を見たくて、小話をしてるんや。<br>
         笑いは健康の秘訣やからな、みんなにいっぱい笑うてほしいわ！<br>
