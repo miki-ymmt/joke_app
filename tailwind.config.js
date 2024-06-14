@@ -7,6 +7,14 @@ module.exports = {
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'noto': ['Noto Sans JP', 'sans-serif'],
+        'kaisei': ['Kaisei Tokumin', 'san-serif']
+      },
+    },
+  },
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["light", "dark", "nord"],

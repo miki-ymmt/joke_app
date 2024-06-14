@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Noto+Sans+JP:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,4 +21,17 @@
 
 .hover\:bg-neonPink:hover {
     background-color: #ff1493;
+}
+
+@layer components {
+    .noto-sans-jp {
+       font-family: "Noto Sans JP", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+    }
+    .kaisei-tokumin-regular {
+        font-family: "Kaisei Tokumin", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
 }

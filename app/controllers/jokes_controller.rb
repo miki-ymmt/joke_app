@@ -35,6 +35,7 @@ class JokesController < ApplicationController
     if @joke.update(joke_params)
       redirect_to jokes_path, notice: "タイトルを保存しました"  #ジョークが更新された場合、ジョーク一覧ページにリダイレクトする
     else
+      flash.now[:alert] = "タイトルは1文字以上20文字以内で入力してください"
       render :edit, status: :unprocessable_entity  #ジョークが更新されなかった場合、ジョーク詳細ページを再表示する
     end
   end

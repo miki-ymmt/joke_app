@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center min-h-screen">
   <div class="w-full max-w-md">
-    <h1 class="text-3xl font-bold mb-10 text-center">パスワードリセット</h1>
+    <h1 class="font-kaisei text-3xl font-bold mb-10 text-center">パスワードリセット</h1>
     <%= form_with model: @user, url: password_resets_path, local: true do |form| %>
       <div class="mb-3">
         <%= form.label :email, "メールアドレス", class: "block text-lg font-medium text-gray-700 font-bold" %>

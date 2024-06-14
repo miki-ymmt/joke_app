@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center items-center min-h-screen bg-gray-950 text-yellow-200 p-6">
-  <h1 class="text-3xl font-bold mb-10 flex justify-center mt-20">小話の一覧</h1>
+  <h1 class="font-kaisei text-3xl font-bold mb-10 flex justify-center mt-20">小話の一覧</h1>
   <%= render 'search_form', q: @q, url: jokes_path %>
   <% if @jokes.present? %>
     <div class="flex justify-center mt-10">
