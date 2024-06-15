@@ -10,7 +10,7 @@
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
     <div class="flex justify-between items-center mt-2">
       <div class="flex items-center">
-        <%= image_tag (joke.user.avatar? ? joke.user.avatar.url : 'default_avatar.png'), class: "w-8 h-8 rounded-full ring ring-neutral-500/50 ring-offset-base-100 ring-offset-2 mr-2"%>
+        <%= image_tag (joke.user.avatar? ?joke.user.avatar.url : 'default_avatar.png'), class: "w-8 h-8 rounded-full ring ring-neutral-500/50 ring-offset-base-100 ring-offset-2 mr-2"%>
         <p class="text-base font-semibold"><%= joke.user.name %></p>
       </div>
       <% if joke.user == current_user %>
