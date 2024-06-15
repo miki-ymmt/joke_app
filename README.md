@@ -1,3 +1,3 @@
 # README
 
-https://www.canva.com/design/DAGINoMhMIY/MfTzITvBLBlzt5F9sLArQQ/view?utm_content=DAGINoMhMIY&utm_campaign=designshare&utm_medium=link&utm_source=editor
+![image](https://github.com/miki-ymmt/joke_app/assets/156039979/93ff9b7a-f999-4dd3-b1df-c17045708444)
