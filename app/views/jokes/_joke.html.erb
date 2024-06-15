@@ -2,7 +2,7 @@
   <div class="card-body p-8 text-center">
     <p class="card-text text-sm"><strong>テーマ:</strong> <%= joke.theme %></p>
     <p class="text-sm font-bold">"<%= joke.title %>"</p>
-    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！~EVERYDAY JOKE SHOW~】%0a%0a#{joke.title}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: joke.title do %>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=【おばちゃんに面白い小話を聞いてみた！〜EVERYDAY JOKE SHOW〜】%0a%0a#{joke.title}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: joke.title do %>
         <%= image_tag 'logo-black.png', class: 'w-5 h-5 ml-2' %>
     <% end %>
     <div class="border-t border-dotted border-2 border-blue-800 my-2"></div>
