@@ -11,23 +11,23 @@
     </div>
   <% end %>
   <div class="mb-3">
-    <%= form.label :name, "ニックネーム", class: "block text-sm sm:text-lg font-medium text-gray-700 font-bold" %>
-    <%= form.text_field :name, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
+    <%= form.label :name, "ニックネーム", class: "block text-sm sm:text-lg font-medium" %>
+    <%= form.text_field :name, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-base-content text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
   </div>
   <div class="mb-3">
-    <%= form.label :email, "メールアドレス", class: "block text-sm sm:text-lg font-medium text-gray-700 font-bold" %>
-    <%= form.email_field :email, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
+    <%= form.label :email, "メールアドレス", class: "block text-sm sm:text-lg font-medium" %>
+    <%= form.email_field :email, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-base-content text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
   </div>
   <div class="mb-3">
-    <%= form.label :password, "パスワード", class: "block text-sm sm:text-lg font-medium text-gray-700 font-bold" %>
-    <%= form.password_field :password, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
+    <%= form.label :password, "パスワード", class: "block text-sm sm:text-lg font-medium" %>
+    <%= form.password_field :password, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-base-content text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
   </div>
   <div class="mb-3">
-    <%= form.label :password_confirmation, "パスワード確認", class: "block text-sm sm:text-lg font-medium text-gray-700 font-bold" %>
-    <%= form.password_field :password_confirmation, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
+    <%= form.label :password_confirmation, "パスワード確認", class: "block text-sm sm:text-lg font-medium" %>
+    <%= form.password_field :password_confirmation, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-base-content text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
   </div>
   <div class="mb-3">
-    <%= form.label :avatar, "アイコン", class: "block text-sm sm:text-lg font-medium text-gray-700 font-bold" %>
+    <%= form.label :avatar, "アイコン", class: "block text-sm sm:text-lg font-medium" %>
     <%= form.file_field :avatar, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-sm sm:text-lg border-gray-300 rounded-md outline outline-offset-2 outline-blue-500/50 py-2 px-4" %>
     <%= form.hidden_field :avatar_cache %>
     <div class="mt-2">
@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="mb-3 mt-5 flex justify-center flex-row space-x-4">
-    <%= form.submit "更新", class: "btn btn-outline btn-neutral text-gray-700 hover:text-gray-100 mt-4 mb-10 ml-5 hover:shadow-sm hover:translate-y-0.5 transform transition" %>
-    <%= link_to "アカウント削除", @user, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: "btn btn-outline btn-neutral text-red-600 mt-4 mb-10 ml-5 hover:shadow-sm hover:translate-y-0.5 transform transition" %>
+    <%= form.submit "更新", class: "btn bg-blue-500 text-white hover:bg-blue-700 mt-4 mb-10 ml-5 hover:shadow-sm hover:translate-y-0.5 transform transition" %>
+    <%= link_to "アカウント削除", @user, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: "btn bg-red-500 text-white hover:bg-red-700 mt-4 mb-10 ml-5 hover:shadow-sm hover:translate-y-0.5 transform transition" %>
   </div>
 <% end %>

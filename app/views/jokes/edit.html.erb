@@ -3,7 +3,7 @@
   <%= render partial: 'joke_detail', locals: { joke: @joke } %>
   <div class="mt-7">
     <%= form_with model: @joke, url: joke_path(@joke), method: :patch, local: true do |form| %>
-      <div class="mb-8 mt-8 justify-center items-center">
+      <div class="mb-8 mt-8 justify-center items-center font-semibold">
         <%= form.label :title, "ぴったりなタイトルって...なんやと思う？" %>
         <br>
         <%= form.text_field :title, class: "input input-bordered w-full max-w-xs mt-4 text-gray-700", placeholder: "1字〜20字以内にしてな!" %>
