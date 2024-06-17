@@ -47,6 +47,7 @@
 | デプロイ     | Render                                             |
 | バージョン管理 | Git, GitHub                                                   |                                                     
 | API       | OpenAI API                                                        |
+| ストレージ     | AWS S3                                                              |
 | 開発環境      | Docker                                                               
 
 ## ユーザー層に関して
